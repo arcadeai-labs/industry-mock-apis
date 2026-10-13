@@ -54,14 +54,14 @@ option and start it. Run the commands below in PowerShell, using `curl.exe` wher
 Clone the repository:
 
 ```bash
-git clone <repository-url> industry-usecases
-cd industry-usecases
+git clone https://github.com/arcadeai-labs/industry-mock-apis.git
+cd industry-mock-apis
 ```
 
 Or copy the folder from your laptop to a VM:
 
 ```bash
-scp -r industry-usecases <user>@<vm-address>:~/
+scp -r industry-mock-apis <user>@<vm-address>:~/
 ```
 
 ### 3. Set the API token
