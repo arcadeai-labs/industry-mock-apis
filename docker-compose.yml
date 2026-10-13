@@ -1,0 +1,19 @@
+services:
+  industry-demo-apis:
+    build: .
+    image: industry-demo-apis
+    container_name: industry-demo-apis
+    environment:
+      API_BEARER_TOKEN: ${API_BEARER_TOKEN:?Set API_BEARER_TOKEN in .env}
+      RESEED_ON_START: ${RESEED_ON_START:-false}
+      AUTH_MODE: ${AUTH_MODE:-static}
+      OKTA_ISSUER: ${OKTA_ISSUER:-}
+      OKTA_AUDIENCE: ${OKTA_AUDIENCE:-api://default}
+    ports:
+      - "${API_PORT:-8080}:8080"
+    volumes:
+      - data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  data:
